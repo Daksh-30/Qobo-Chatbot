@@ -1,0 +1,234 @@
+/* ═══════════════════════════════════════════════════════════════
+   Global Styles  —  Qobo AI Chatbot
+   ═══════════════════════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  color: #f1f5f9;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* ── Demo landing page styles ─────────────────────────────────── */
+.demo-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* Animated background grid */
+.demo-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(78, 205, 196, 0.08) 1px,
+      transparent 0
+    );
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* Glowing orb */
+.demo-page::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(78, 205, 196, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  animation: glow-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+  0% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+.demo-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.demo-logo-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4ecdc4, #3db8b0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(78, 205, 196, 0.35);
+}
+
+.demo-logo-circle span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.3px;
+}
+
+.demo-logo h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.demo-logo h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #4ecdc4, #82e9de);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.demo-tagline {
+  font-size: 18px;
+  color: #94a3b8;
+  max-width: 480px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.demo-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #4ecdc4, #3db8b0);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
+}
+
+.demo-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(78, 205, 196, 0.45);
+}
+
+.demo-cta svg {
+  width: 20px;
+  height: 20px;
+}
+
+.demo-arrow {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: bounce-arrow 1.5s ease-in-out infinite;
+}
+
+.demo-arrow span {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.demo-arrow svg {
+  width: 28px;
+  height: 28px;
+  color: #4ecdc4;
+}
+
+@keyframes bounce-arrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* ── Feature pills ────────────────────────────────────────────── */
+.demo-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.demo-pill {
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(78, 205, 196, 0.08);
+  border: 1px solid rgba(78, 205, 196, 0.2);
+  color: #82e9de;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .demo-logo h1 {
+    font-size: 22px;
+  }
+  .demo-tagline {
+    font-size: 15px;
+  }
+  .demo-arrow {
+    display: none;
+  }
+}
