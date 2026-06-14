@@ -127,7 +127,7 @@ export default function ChatWidget() {
         <div className="chat-header">
           <div className="chat-header-logo">
             <Image
-              src="/qobo-bot.png"
+              src="/qobo-logo.png"
               alt="Qobo"
               width={42}
               height={42}
