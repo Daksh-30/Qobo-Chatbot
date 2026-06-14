@@ -84,7 +84,7 @@ User Question → Keyword Search (knowledge.json) → Top 3 Pages as Context →
 3. **Top 3 relevant pages** are extracted as context
 4. **Context + question** are sent to Groq's Llama 3.3 70B model
 5. **LLM generates a natural answer** strictly from the provided context
-6. If nothing relevant is found → *"I could not find that information on Qobo."*
+6. If nothing relevant is found → *"I could not find that information on Qobo. Please contact the Qobo.dev team for assistance.\n\n📧 Email: hello@qobo.dev\n📞 Phone: +91 99011 41616"*
 
 ---
 
@@ -118,7 +118,7 @@ User Question → Keyword Search (knowledge.json) → Top 3 Pages as Context →
 **Fallback (off-topic):**
 ```json
 {
-  "answer": "I could not find that information on Qobo.",
+  "answer": "I could not find that information on Qobo. Please contact the Qobo.dev team for assistance.\n\n📧 Email: hello@qobo.dev\n📞 Phone: +91 99011 41616",
   "source": null
 }
 ```

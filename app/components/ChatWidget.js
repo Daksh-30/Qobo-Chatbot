@@ -82,7 +82,9 @@ export default function ChatWidget() {
 
       const assistantMsg = {
         role: "assistant",
-        content: data.answer || "I could not find that information on Qobo.",
+        content:
+          data.answer ||
+          "I could not find that information on Qobo. Please contact the Qobo.dev team for assistance.\n\n📧 Email: hello@qobo.dev\n📞 Phone: +91 99011 41616",
         source: data.source || null,
         time: formatTime(new Date()),
       };

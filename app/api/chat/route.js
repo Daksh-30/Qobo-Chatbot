@@ -186,7 +186,7 @@ const SYSTEM_PROMPT = `You are Qobo AI Assistant — a friendly, helpful chatbot
 RULES:
 1. Answer ONLY using the provided CONTEXT from the Qobo website. Do NOT make up information.
 2. If the context does not contain enough information to answer, respond EXACTLY with:
-   "I could not find that information on Qobo."
+   "I could not find that information on Qobo. Please contact the Qobo.dev team for assistance.\n\n📧 Email: hello@qobo.dev\n📞 Phone: +91 99011 41616"
 3. Keep answers concise (2-4 sentences), friendly, and professional.
 4. Use simple language. You may include relevant details like pricing (₹499), features, or steps.
 5. If the user greets you, respond warmly and briefly describe what Qobo does.
@@ -219,7 +219,8 @@ export async function POST(request) {
     // ── If no relevant context found, return fallback ────────────
     if (!context) {
       return NextResponse.json({
-        answer: "I could not find that information on Qobo.",
+        answer:
+          "I could not find that information on Qobo. Please contact the Qobo.dev team for assistance.\n\n📧 Email: hello@qobo.dev\n📞 Phone: +91 99011 41616",
         source: null,
       });
     }
@@ -241,7 +242,7 @@ export async function POST(request) {
 
     const answer =
       chatCompletion.choices?.[0]?.message?.content?.trim() ||
-      "I could not find that information on Qobo.";
+      "I could not find that information on Qobo. Please contact the Qobo.dev team for assistance.\n\n📧 Email: hello@qobo.dev\n📞 Phone: +91 99011 41616";
 
     return NextResponse.json({
       answer,
